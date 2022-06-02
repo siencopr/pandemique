@@ -23,12 +23,12 @@ def pioche_n_carte_propagation(n):
     """
     print("*" * 15, "\n" * 2, "** infections **")
     for i in range(n):
-        ville_propagation = Jeu.pioche_de_la_ville_infecter(Constantes.Tas_de_carte_propagation)
-        ville_propagation.infection[ville_propagation.COULEUR] += 1
+        ville_infecter = Jeu.pioche_de_la_ville_infecter()
+        ville_infecter.se_faire_infecter(ville_infecter.COULEUR)
 
-        print("la ville", ville_propagation.NAME, "a été infectée par le virus")
+        print("la ville", ville_infecter.NAME, "a été infectée par le virus")
 
-        print(ville_propagation.infection)
+        print(ville_infecter.infection)
 
 
 def pioche_n_carte_joueur(n, joueur):

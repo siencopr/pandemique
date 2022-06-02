@@ -37,14 +37,14 @@ class Jeu:
 
         return nom
 
-    def pioche_de_la_ville_infecter(self, liste_propagation):
+    def pioche_de_la_ville_infecter(self):
         """
         simule la pioche d'une carte proagation
 
         :param n:
         :return:
         """
-        nom = liste_propagation.pop(0)
+        nom = self.constantes.Tas_de_carte_propagation.pop(0)
         ville = self.constantes.dico_ville[nom]
 
         print(ville)
