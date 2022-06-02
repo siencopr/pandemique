@@ -1,8 +1,8 @@
-from constantes import Constantes
 
 class Ville:
 
-    def __init__(self, position, relation, couleur, name, centre = False):
+    def __init__(self, constantes, position, relation, couleur, name):
+
         """
         créé une ville
 
@@ -30,12 +30,12 @@ class Ville:
         :param name:
         """
         self.POSITION = position
-        self.centre = centre
-        self.infection = {Constantes().RED    : 0,
-                     Constantes().BLUE   : 0,
-                     Constantes().BLACK  : 0,
-                     Constantes().YELLOW : 0
-                     }
+        self.centre_recherche = False
+        self.infection = {constantes.RED    : 0,
+                          constantes.BLUE   : 0,
+                          constantes.BLACK  : 0,
+                          constantes.YELLOW : 0
+                          }
         self.RELATION = relation
         self.COULEUR = couleur
         self.NAME = name

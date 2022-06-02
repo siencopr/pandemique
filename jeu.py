@@ -3,21 +3,21 @@ from constantes import Constantes
 class Jeu:
     def __init__(self):
         self.win = False
-        self.Constantes = Constantes()
+        self.constantes = Constantes()
 
 
     def action_possible(self, joueur):
 
-        liste_action_possible = [self.Constantes.VOITURE]
+        liste_action_possible = [self.constantes.VOITURE]
 
-        if joueur.position.infection[self.Constantes.RED] > 0:
-            liste_action_possible.append(self.Constantes.DESINFECTION_RED)
-        if joueur.position.infection[self.Constantes.BLUE] > 0:
-            liste_action_possible.append(self.Constantes.DESINFECTION_BLUE)
-        if joueur.position.infection[self.Constantes.BLACK] > 0:
-            liste_action_possible.append(self.Constantes.DESINFECTION_BLACK)
-        if joueur.position.infection[self.Constantes.YELLOW] > 0:
-            liste_action_possible.append(self.Constantes.DESINFECTION_YELLOW)
+        if joueur.position.infection[self.constantes.RED] > 0:
+            liste_action_possible.append(self.constantes.DESINFECTION_RED)
+        if joueur.position.infection[self.constantes.BLUE] > 0:
+            liste_action_possible.append(self.constantes.DESINFECTION_BLUE)
+        if joueur.position.infection[self.constantes.BLACK] > 0:
+            liste_action_possible.append(self.constantes.DESINFECTION_BLACK)
+        if joueur.position.infection[self.constantes.YELLOW] > 0:
+            liste_action_possible.append(self.constantes.DESINFECTION_YELLOW)
 
         return liste_action_possible
 
@@ -45,8 +45,11 @@ class Jeu:
         :return:
         """
         nom = liste_propagation.pop(0)
+        ville = self.constantes.dico_ville[nom]
 
-        return nom
+        print(ville)
+
+        return ville
 
 
 

@@ -1,5 +1,6 @@
 
 import random
+from ville import Ville
 
 class Constantes:
 
@@ -73,6 +74,28 @@ class Constantes:
         self.HO_CHI_MINH_VILLE = "hô-chi-minh-ville"
         self.JAKARTA           = "jakarta"
         self.SYDNEY            = "sydney"
+
+        self.dico_ville = {
+            # ville Bleu
+            self.SAN_FRANCISCO:     Ville(constantes = self, position=(32,  139), relation = (self.TOKYO, self.MANILLE, self.LOS_ANGELES, self.CHICAGO),                      couleur=self.BLUE, name=self.SAN_FRANCISCO),
+            self.PARIS:             Ville(constantes = self, position=(272, 122), relation = (self.MADRID, self.LONDRES, self.ESSEN, self.MILAN, self.ALGER),                 couleur=self.BLUE, name=self.PARIS),
+            self.CHICAGO:           Ville(constantes = self, position=(85,  122), relation = (self.SAN_FRANCISCO, self.LOS_ANGELES, self.MEXICO, self.ATLANTA,self.MONTREAL), couleur=self.BLUE, name=self.CHICAGO),
+            self.MONTREAL:          Ville(constantes = self, position=(32,  139), relation = (self.WASHINGTON, self.NEW_YORK, self.CHICAGO),                                  couleur=self.BLUE, name=self.MONTREAL),
+            self.NEW_YORK:          Ville(constantes = self, position=(160, 124), relation = (self.MONTREAL, self.WASHINGTON, self.MADRID, self.LONDRES),                     couleur=self.BLUE, name=self.NEW_YORK),
+            self.LONDRES:           Ville(constantes = self, position=(100, 240), relation = (self.ESSEN, self.PARIS, self.MADRID, self.NEW_YORK),                            couleur=self.BLUE, name=self.LONDRES),
+            self.ATLANTA:           Ville(constantes = self, position=(113, 153), relation = (self.CHICAGO, self.MIAMI, self.WASHINGTON),                                     couleur=self.BLUE, name=self.ATLANTA),
+            self.WASHINGTON:        Ville(constantes = self, position=(147, 153), relation = (self.ATLANTA, self.MONTREAL, self.NEW_YORK, self.MIAMI),                        couleur=self.BLUE, name=self.WASHINGTON),
+            self.MADRID:            Ville(constantes = self, position=(232, 143), relation = (self.SAO_PAULO, self.NEW_YORK, self.LONDRES, self.PARIS, self.ALGER),           couleur=self.BLUE, name=self.MADRID),
+            self.ESSEN:             Ville(constantes = self, position=(281, 85 ), relation = (self.SAINT_PETERSBOURG, self.MILAN, self.PARIS, self.LONDRES),                  couleur=self.BLUE, name=self.ESSEN),
+            self.MILAN:             Ville(constantes = self, position=(299, 105), relation = (self.ISTANBUL, self.PARIS, self.ESSEN),                                         couleur=self.BLUE, name=self.MILAN),
+            self.SAINT_PETERSBOURG: Ville(constantes = self, position=(329, 85 ), relation = (self.MOSCOU, self.ISTANBUL, self.ESSEN),                                        couleur=self.BLUE, name=self.SAINT_PETERSBOURG),
+
+            # ville Noir
+            self.ALGER: Ville(constantes = self, position=(280, 167), relation=(self.MADRID, self.PARIS, self.ISTANBUL, self.LE_CAIRE), couleur=self.BLACK, name=self.ALGER),
+
+        }
+
+        self.dico_ville[self.ATLANTA].centre_recherche = True #atlanta comence avec un centre de recherche des le debut de la partie, on l'initialise ici pour pas oublier
 
         """
         self.TAS_DE_CARTE_PROPAGATION = [self.PEKIN,
