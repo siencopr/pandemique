@@ -12,12 +12,14 @@ class Constantes:
         self.YELLOW = "yellow"
 
         #action
-        self.VOITURE = "voiture"
-        self.VOL_DIRECTE = "vol directe"
-        self.VOL_CHARTER = "vol chatrer"
-        self.DESINFECTION_RED = "desinfection red"
-        self.DESINFECTION_BLUE = "desinfection blue"
-        self.DESINFECTION_BLACK = "desinfection black"
+        self.VOITURE             = "voiture"
+        self.VOL_DIRECTE         = "vol directe"
+        self.VOL_CHARTER         = "vol charter"
+        self.NAVETTE             = "navette"
+        self.CONSTRUIR_CENTRE    = "construir centre de recherche"
+        self.DESINFECTION_RED    = "desinfection red"
+        self.DESINFECTION_BLUE   = "desinfection blue"
+        self.DESINFECTION_BLACK  = "desinfection black"
         self.DESINFECTION_YELLOW = "desinfection yellow"
 
 
@@ -95,7 +97,6 @@ class Constantes:
 
         }
 
-        self.dico_ville[self.ATLANTA].centre_recherche = True #atlanta comence avec un centre de recherche des le debut de la partie, on l'initialise ici pour pas oublier
 
         """
         self.TAS_DE_CARTE_PROPAGATION = [self.PEKIN,

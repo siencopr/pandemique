@@ -43,10 +43,17 @@ class Ville:
         self.can_explose = True
 
     def se_faire_infecter(self, couleur):
+        print("la ville", self.NAME, "a été infectée par le virus", end = " ")
+
+
         if self.infection[couleur] < 3:
             self.infection[couleur] += 1
+            print(":", self.infection)
         elif self.can_explose:
+            print("\n la ville", self.NAME, "a déjà été infectée 3 fois... \n nous assistons donc a une \U00002623 ECLOSION \U00002623")
             self.can_explose = False
             for name_ville in self.RELATION:
                 self.Constantes.dico_ville[name_ville].se_faire_infecter(couleur)
+
+
 

@@ -19,6 +19,17 @@ class Jeu:
         if joueur.position.infection[self.constantes.YELLOW] > 0:
             liste_action_possible.append(self.constantes.DESINFECTION_YELLOW)
 
+        if joueur.position.centre_recherche:
+            liste_action_possible.append(self.constantes.NAVETTE)
+        else:
+            liste_action_possible.append(self.constantes.CONSTRUIR_CENTRE)
+
+        if joueur.position.NAME in joueur.inventaire:
+            liste_action_possible.append(self.constantes.VOL_CHARTER)
+
+
+
+
         return liste_action_possible
 
     def deplacement(self, joueur):
@@ -37,19 +48,7 @@ class Jeu:
 
         return nom
 
-    def pioche_de_la_ville_infecter(self):
-        """
-        simule la pioche d'une carte proagation
 
-        :param n:
-        :return:
-        """
-        nom = self.constantes.Tas_de_carte_propagation.pop(0)
-        ville = self.constantes.dico_ville[nom]
-
-        print(ville)
-
-        return ville
 
 
 
